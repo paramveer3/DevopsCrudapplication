@@ -81,6 +81,7 @@ namespace DevopsCrudapplication.Tests
                 var controller = new InventoryController(context);
                 var updatedInventory = new Inventory { Id = 1, Name = "Updated Inventory 1" };
 
+
                 // Act
                 var result = await controller.UpdateInventory(1, updatedInventory);
 

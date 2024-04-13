@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8RiVhThextBaBIYUgRtnVa8nTMHeQMrBOTHs51KvoXAgmcx/Nh68ZcsIHuKFnX5lf4rdC+mxs7UuHbsUG4W7gQ==",
+  "dgSpecHash": "hDcg1zi69Gx53vERg9OOusbKa9eLLr/fr3L/omIdelPMQY8JTgNOPvVxTVptmbm6jxuM6MElV7aRR/NubUcpYw==",
   "success": true,
   "projectFilePath": "C:\\Users\\paramveersisodiya\\OneDrive - Nagarro\\Desktop\\year2024\\Devops\\DevopsCrudapplication\\DevopsCrudapplication\\DevopsCrudapplication.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\paramveersisodiya\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\paramveersisodiya\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\paramveersisodiya\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\paramveersisodiya\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
     "C:\\Users\\paramveersisodiya\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\paramveersisodiya\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\paramveersisodiya\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
