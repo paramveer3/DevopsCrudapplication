@@ -1,10 +1,13 @@
+
+
 pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'paramveer03/devopsdotnet'
-	CONTAINER_NAME = 'devopsdotnetcont'
+        IMAGE_NAME = 'paramveer03/devopscrudapp'
+	CONTAINER_NAME = 'devopscrudappcont'
         IMAGE_TAG = 'latest'
+	 SCANNER_HOME= tool 'sonar-scanner'
     }
 
     stages {
@@ -16,7 +19,26 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'dotnet build dotnetapplication/dotnetapplication.csproj --configuration Release'
+                sh 'dotnet build DevopsCrudapplication/DevopsCrudapplication.csproj --configuration Release'
+            }
+        }
+
+	stage('Unit Tests') {
+            steps {
+                // Run unit tests for the .NET project
+                dir('DevopsCrudapplication.Tests/bin/Debug/net7.0') {
+                    sh 'dotnet test DevopsCrudapplication.Tests.dll'
+                }
+            }
+        }
+
+	stage('Sonarqube Analysis') {
+            steps {
+                withSonarQubeEnv('sonar-server'){
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=DevopsCrudapplication \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=DevopsCrudapplication '''
+                }
             }
         }
 
@@ -50,7 +72,7 @@ pipeline {
                     // Stop the currently running container (if any)
                     sh 'docker rm -f ${CONTAINER_NAME} || true'
                     // Run the new container
-                    sh "docker run -d --name ${CONTAINER_NAME} -p 8885:80 ${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "docker run -d --name ${CONTAINER_NAME} -p 8888:80 ${IMAGE_NAME}:${IMAGE_TAG}"
                 }
             }
         }
